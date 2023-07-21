@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Market Website Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000000;
+    }
+    #login-container {
+      display: flex;
+      width: 1000px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    #login-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40%;
+      padding: 20px;
+      background-image: url('assets/loginpageimg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .image{
+      height: 100%;
+      max-width:200px;
+    }
+    #login-right {
+      width: 60%;
+      padding: 20px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .login-input {
+      width: 100%;
+      padding: 10px 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+    .signup-link {
+      text-align: center;
+    }
+    .signup-link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="login-container">
+    <div id="login-left">
+      <img src="assets/loginpageimg.jpg" alt="IMAGE" class="image">
+    </div>
+    <div id="login-right">
+      <!-- Login form -->
+      <div id="login-form">
+        <h2>Login to Your Account</h2>
+        <input class="login-input" type="text" placeholder="Email or Username">
+        <input class="login-input" type="password" placeholder="Password">
+        <button class="login-button">Login</button>
+        <div class="signup-link">
+          <a href="#" id="switch-to-signup">Don't have an account? Sign Up</a>
+        </div>
+        <p>Or log in with:</p>
+        <!-- Add your Google and Apple login buttons here -->
+        <!-- Example:
+        <button class="login-button">Login with Google</button>
+        <button class="login-button">Login with Apple</button>
+        -->
+      </div>
+
+      <!-- Sign-up form -->
+      <div id="signup-form" style="display: none;">
+        <h2>Sign Up for an Account</h2>
+        <input class="login-input" type="text" placeholder="Full Name">
+        <input class="login-input" type="text" placeholder="Email">
+        <input class="login-input" type="password" placeholder="Password">
+        <input class="login-input" type="password" placeholder="Confirm Password">
+        <button class="login-button">Sign Up</button>
+        <div class="signup-link">
+          <a href="#" id="switch-to-login">Already have an account? Log In</a>
+        </div>
+        <p>Or sign up with:</p>
+        <!-- Add your Google and Apple sign-up buttons here -->
+        <!-- Example:
+        <button class="login-button">Sign Up with Google</button>
+        <button class="login-button">Sign Up with Apple</button>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code to switch between login and sign-up forms
+    const switchToSignupLink = document.getElementById('switch-to-signup');
+    const switchToLoginLink = document.getElementById('switch-to-login');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+
+    switchToSignupLink.addEventListener('click', () => {
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'block';
+    });
+
+    switchToLoginLink.addEventListener('click', () => {
+      loginForm.style.display = 'block';
+      signupForm.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
